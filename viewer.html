@@ -28,3 +28,16 @@
     </model-viewer>
   </body>
 </html>
+
+<script>
+  window.addEventListener("message", function (event) {
+    if (event.data.action === "animateBox") {
+      const box = document.querySelector("model-viewer");
+      if (!box) return;
+
+      box.style.transition = "transform 1s ease-out";
+      box.style.transform = "scale(0.5) translateY(100px)";
+      box.autoRotate = false;
+    }
+  });
+</script>
